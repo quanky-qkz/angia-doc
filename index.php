@@ -8,27 +8,27 @@
 <meta name="keywords" content="Angia, Utility, Transportation, Vận Chuyển" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!--Custom-Theme-files-->
-	<link href="./css/style.css" rel='stylesheet' type='text/css' />
-	<script src="http://localhost/wedding/assets/js/jquery.min.js"> </script>
+  <link href="./css/style.css" rel='stylesheet' type='text/css' />
+  <script src="http://localhost/wedding/assets/js/jquery.min.js"> </script>
 
 
-	<!-- jQuery UI 1.10.3 -->
-	<script src="http://localhost/wedding/assets/admin/js/jquery-ui-1.10.3.min.js" type="text/javascript"></script>
-	<!-- jQuery validate -->
-	<script src="http://localhost/wedding/assets/admin/js/jquery.validate.min.js"></script>
+  <!-- jQuery UI 1.10.3 -->
+  <script src="http://localhost/wedding/assets/admin/js/jquery-ui-1.10.3.min.js" type="text/javascript"></script>
+  <!-- jQuery validate -->
+  <script src="http://localhost/wedding/assets/admin/js/jquery.validate.min.js"></script>
 <!--/script-->
 <script type="text/javascript" src="http://localhost/wedding/assets/js/move-top.js"></script>
 <script type="text/javascript">
-			jQuery(document).ready(function($) {
-				$(".scroll").click(function(event){
-					event.preventDefault();
-					$('html,body').animate({scrollTop:$(this.hash).offset().top},900);
-				});
-			});
+      jQuery(document).ready(function($) {
+        $(".scroll").click(function(event){
+          event.preventDefault();
+          $('html,body').animate({scrollTop:$(this.hash).offset().top},900);
+        });
+      });
 </script>
 </head>
 <body>
-	<h1>Bản mô tả chức năng ứng dụng Angia</h1>
+  <h1>Bản mô tả chức năng ứng dụng Angia</h1>
   <ul>
     <li>
       <h2>I. Nguời dùng</h4>
@@ -105,12 +105,30 @@
 
         </li>
         <li>
-          <h3>2. Thông tin chi tiết</h3>
-
-
+          <h3>2. Các chức năng mong muốn cho quản trị viên</h3>
+          <ul>
+             <li>
+              <h4>Quản lý tiện ích</h4>
+              Khi người dùng đăng kí tiện ích thành công: 
+              <ul>
+                <li>
+                  Quản trị viên được phép cập nhật thêm số khung, số máy <i>(đối với tiện ích di chuyển)</i>
+                </li>
+                <li>
+                  Nếu người dùng đăng kí tiện ích bằng mã quản lý của chính mình, gửi email thông báo về email của người dùng
+                </li>
+                <li>
+                  Nếu người dùng đăng kí tiện ích bằng mã quản lý của người khác, gửi email yêu cầu kích hoạt về email của người có mã quản lý
+                </li>
+                <li>
+                  Quản trị viên được phép gắn thẻ ngầm cho tiện ích phục vụ chức năng tìm kiếm của ứng dụng
+                </li>
+              </ul>
+              </li>
+          </ul>
         </li>
         <li>
-          <h3>3. Các chức năng mong muốn</h3>
+          <h3>3. Các chức năng mong muốn ứng dụng</h3>
           <ul>
             <li>
               <h4>Đăng ký tiện ích</h4>
@@ -201,6 +219,24 @@
               <h4>Quét tiện ích xung quanh</h4>
               Nguời dùng có thể xem các tiện ích xung quanh hoặc ở các khu vực đã chọn<br/>
               Mỗi tiện ích xuất hiện trong danh sách quét cần hiển thị đuợc các thông tin sau:
+              <ul>
+                <li>Ảnh đại diện</li>
+                <li>Tên thuơng hiệu</li>
+                <li>Loại hình</li>
+                <li>Chi tiết loại hình</li>
+                <li>Tiêu đề quảng cáo</li>
+                <li>Giờ đóng cửa</li>
+                <li>Giờ mở cửa</li>
+                <li>Khoảng cách tới vị trí ngưòi dùng</li>
+                <li>Mức sao đánh giá</li>
+              </ul>
+            </li>
+            <li>
+              <h4>Tìm kiếm tiện ích theo thẻ <i>(cấp)</i></h4>
+              Người dùng có thể tìm kiếm tiện ích dựa trên <b>thẻ</b> đã chọn<br/>
+              Mỗi tiện ích sẽ được đánh dấu bằng <b>thẻ phân loại theo cấp</b> <i>(1 cấp cha có thể có nhiều cấp con)</i>
+              Khi người dùng tìm kiếm theo thẻ, ngoài việc hiển thị chính xác thẻ mà người dùng đang tìm kiếm, sẽ hiển thị <i>tất cả các thẻ cùng cấp, thuộc cùng 1 cấp cha.</i>
+              Mỗi tiện ích xuất hiện trong danh sách tìm kiếm cần hiển thị đuợc các thông tin sau:
               <ul>
                 <li>Ảnh đại diện</li>
                 <li>Tên thuơng hiệu</li>
