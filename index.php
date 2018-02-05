@@ -38,8 +38,11 @@
           <p>
             <b>Nguời dùng</b> là một tài khoản đại diện cho nguời dùng thực sử dụng ứng dụng.
           </p>
-          <h3>2. Thông tin chi tiết</h3>
-
+          <h3>2. CMS</h3>
+            <ul>
+              <li>User được cấp point (phải có email mới cấp point thành công)</li>
+              <li>Số sao mặc định là 5 sao, sau đó sẽ lấy số sao của khách hàng đánh giá chia trung bình là ra số sao cần hiển thị</li>
+            </ul>
           <h3>3. Các chức năng mong muốn</h3>
           <ul>
             <li>
@@ -73,8 +76,10 @@
             </li>
             <li>
               <h4>Lấy lại mật khẩu</h4>
-              Nguời dùng có thể lấy lại mật khẩu trong truờng hợp đã cập nhật email cá nhân cho tài khoản, yêu cầu xác nhận qua mã xác mình gửi về email đó.
-              Mã xác nhận là 1 dãy gồm 6 kí tự.
+              Nguời dùng có thể lấy lại mật khẩu bằng cách gửi vào email (mã xác nhận là 1 dãy gồm 6 kí tự) trong truờng hợp người dùng đã cập nhật email cá nhân cho tài khoản.
+              <ul>
+                <li>Nếu người dùng chưa cập nhật email, cho phép họ được nhập email tự do ở chỗ khai báo email lấy lại mật khẩu. Chỗ này khi người dùng lấy lại mật khẩu cần check xem có email chưa? Nếu chưa có thì cho nhập email chỗ này và lưu trên hệ thống. Coi như tài khỏan bây giờ cập nhật thêm thông tin là email</li>
+              </ul>
             </li>
             <li>
               <h4>Đổi mật khẩu</h4>
@@ -97,7 +102,7 @@
             <b>Tiện ích</b> là một trong các đối tuợng chính và quan trọng nhất của ứng dụng, đuợc chia làm 2 loại là <b>tiện ích cố định</b> và <b>tiện ích di chuyển</b>
           </p>
           <p>
-            <b>Tiện ích cố định</b> bao gồm các đối tuợng có vị trí không thay đổi hoặc rất hiếm khi thay đổi, ví dụ: Nhà hàng, quán cà phê, khách sạn, ...
+            <b>Tiện ích cố định</b> bao gồm các đối tuợng có vị trí không thay đổi ,ví dụ: Nhà hàng, quán cà phê, khách sạn, ... (Muốn thay đổi vị trí của tiện ích cố định sẽ xóa đi tạo tiện ích mới)
           </p>
           <p>
             <b>Tiện ích di chuyển</b> bao gồm các đối tuợng có vị trí thay đổi thuờng xuyên, ví dụ: các loại xe cộ
@@ -112,16 +117,24 @@
               Khi người dùng đăng kí tiện ích thành công: 
               <ul>
                 <li>
-                  Quản trị viên được phép cập nhật thêm số khung, số máy <i>(đối với tiện ích di chuyển)</i>
+                  Quản trị viên được phép cập nhật thêm số khung, số máy, số cmnd (đối với tiện ích di chuyển)
                 </li>
                 <li>
-                  Nếu người dùng đăng kí tiện ích bằng mã quản lý của chính mình, gửi email thông báo về email của người dùng
+                  Quản trị viên được phép cập nhật thêm, số cmnd (đối với tiện ích cố định)
                 </li>
                 <li>
-                  Nếu người dùng đăng kí tiện ích bằng mã quản lý của người khác, gửi email yêu cầu kích hoạt về email của người có mã quản lý
+                  Quản trị viên sét tiện ích đạt thang điểm bao nhiêu ?mục đích để vào đấu giá có ưu tiên cho tiện ích
                 </li>
                 <li>
-                  Quản trị viên được phép gắn thẻ ngầm cho tiện ích phục vụ chức năng tìm kiếm của ứng dụng
+                  Nếu người dùng đăng kí tiện ích bằng mã quản lý của chính mình, gửi email thông báo thành công về email của người dùng
+                </li>
+                <li>
+                  Nếu người dùng đăng kí tiện ích bằng mã quản lý của người khác, gửi nội dung( tex, có link kích hoạt ) đến email của người có mã quản lý, khi người có mã quản lý kích hoạt thì tài khoản của người này sẽ bị trừ điểm ( 1 ngày tương ứng với 1 point ). Lúc này tiện ích đã được kích hoạt và trả về màn hình quản lý tiện ích của người khai báo dky tiện ích. ( nhưng chưa được hiện bên màn hình tiện ích dành cho nhiều người ) . khi dc admin sửa lại và setup lúc này tiện ích mới dc hiện ra danh sách tiện ích.
+                <li>
+                  Quản trị viên phải gắn thẻ ngầm cho tiện ích phục vụ chức năng tìm kiếm của ứng dụng mới dc phuplic ra danh sách tiện ích
+                </li>
+                <li>
+                  Người dùng khi đăng ký tiện ích cố định/ di chuyển nếu chưa dc kích hoạt thì sẽ ko dc đăng ký đến cái thứ 3. Chỉ dc 02 cái tránh spam
                 </li>
               </ul>
               </li>
@@ -171,16 +184,22 @@
             </li>
             <li>
               <h4>Quản lý danh sách tiện ích</h4>
-              Nguời dùng đang trực tiếp sử hữu tiện ích có thể quản lý danh sách tiện ích <br/>
-              Nguời dùng đầu tiên tạo ra tiện ích cũng có thể theo dõi tiện ích trong danh sách của mình<br/>
-              Mỗi tiện ích trong danh sách cần thể hiện đuợc các thông tin sau:
               <ul>
-                <li>Tên thuơng hiệu</li>
-                <li>Ảnh đại diện</li>
-                <li>Địa chỉ (hoặc biển số)</li>
-                <li>Mã thuơng hiệu</li>
-                <li>Ngày hết hạn</li>
+                <li>Người dùng tạo tiện ích thì mãi tiện ích dc tạo này vẫn thuộc user chủ quản này</li>
+                <li>Quản lý các tiện ích là căn cứ vào user nào dky tiện ích ( lưu ý ko pải căn cứ vào mã quản lý được nhập )</li>
+                <li>Tiện ích trừ phí hay giao dịch cần xác định vào mã quản lý thời điển hiện tại tiện ích đó đang online thuộc user nào ( trừ phí vào user đang thực hiện thời diểm hiện tại )</li>
+                <li>Nguời dùng đang trực tiếp sử hữu tiện ích có thể quản lý danh sách tiện ích , Nguời dùng đầu tiên tạo ra tiện ích cũng có thể theo dõi tiện ích trong danh sách của mình
+              Mỗi tiện ích trong danh sách cần thể hiện đuợc các thông tin sau:
+                <ul>
+                  <li>Tên thuơng hiệu</li>
+                  <li>Ảnh đại diện</li>
+                  <li>Địa chỉ (hoặc biển số)</li>
+                  <li>Mã thuơng hiệu</li>
+                  <li>Ngày hết hạn</li>
+                </ul>
+                </li>
               </ul>
+              
             </li>
             <li>
               <h4>Quản lý chi tiết tiện ích</h4>
@@ -212,8 +231,15 @@
             </li>
             <li>
               <h4>Quản lý thiết bị đi kèm của tiện ích di chuyển</h4>
-              Tiện ích di chuyển của nguời dùng có thể đuợc gắn vào 1 thiết bị tracker, dùng để định vị và điều khiển rơle từ xa
-              Nếu tiện ích di chuyển đuợc gắn với thiết bị này thì nguời dùng đuợc phép xem vị trí trên bản đồ cũng như tắt / mở rơle của phuơng tiện
+              <ul>
+                <li>Tiện ích di chuyển của nguời dùng có thể đuợc gắn vào 01 , 02 thiết bị tracker, dùng để định vị và điều khiển rơle từ xa. Nếu tiện ích di chuyển đuợc gắn với thiết bị này thì nguời dùng đuợc phép xem vị trí trên bản đồ, tốc độ cũng như tắt / mở rơle của phuơng tiện</li>
+                <li>Admin được phép thiết lập chọn thiết bị nào để cập nhật , có các chế độ cập nhật sau
+                  <ul>
+                    <li>Automatic =&gt; tự động lấy tọa độ theo chế độ ưu tiên ( hộp đen – thiết bị chống trộm –gps phone )</li>
+                    <li>Chọn cố định loại thiết bị muốn cập nhật</li>
+                  </ul>
+                </li>
+              </ul>
             </li>
             <li>
               <h4>Quét tiện ích xung quanh</h4>
@@ -234,8 +260,7 @@
             <li>
               <h4>Tìm kiếm tiện ích theo thẻ <i>(cấp)</i></h4>
               Người dùng có thể tìm kiếm tiện ích dựa trên <b>thẻ</b> đã chọn<br/>
-              Mỗi tiện ích sẽ được đánh dấu bằng <b>thẻ phân loại theo cấp</b> <i>(1 cấp cha có thể có nhiều cấp con)</i>
-              Khi người dùng tìm kiếm theo thẻ, ngoài việc hiển thị chính xác thẻ mà người dùng đang tìm kiếm, sẽ hiển thị <i>tất cả các thẻ cùng cấp, thuộc cùng 1 cấp cha.</i>
+              Mỗi tiện ích sẽ được đánh dấu bằng nhiều <b>nhóm cấp cha ( nhưng search bằng thẻ từ khóa của cấp con )</b> trong 01 cấp cha có nhiều từ khóa thẻ cấp con, đa ngôn ngữ) Khi người dùng tìm kiếm theo thẻ, ngoài việc hiển thị chính xác thẻ mà người dùng đang tìm kiếm, sẽ hiển thị tất cả các thẻ trong nhóm cùng cấp, thuộc cùng 1 cấp cha.</i>
               Mỗi tiện ích xuất hiện trong danh sách tìm kiếm cần hiển thị đuợc các thông tin sau:
               <ul>
                 <li>Ảnh đại diện</li>
@@ -254,7 +279,7 @@
               Nguời dùng có thể xem chi tiết tiện ích nếu quét đuợc nó<br/>
               Chi tiết tiện ích cần hiển thị đuợc các thông tin sau:
               <ul>
-                <li>Ảnh đại diện</li>
+                <li>Ảnh đại diện (avatar chủ tiện ích)</li>
                 <li>Tên thuơng hiệu</li>
                 <li>Địa chỉ / biển số xe</li>
                 <li>Các hình ảnh của tiện ích</li>
@@ -266,7 +291,8 @@
               <ul>
                 <li>Gọi điện cho nguời sở hữu</li>
                 <li>Nhắn tin cho nguời sở hữu</li>
-                <li>Chỉ đường đến vị trí tiện ích</li>
+                <li>Chỉ đường đến vị trí tiện ích ( nếu là cố định nhảy qua google map chỉ đường luôn, nếu là di chuyên thì gửi yêu cầu cho người đang làm việc tiện ích nếu cho phép thì mới thấy vị trí của tiện ích. Với tính năng này yêu cầu realtimer, notificaition</li>
+                <li>Người dùng cũng có thể search số dt user của nhau để thấy vị trí và vẫn phải dc xác nhận cho phép mới thấy vị trí <i>Cần hiểu kỹ không sẽ nhầm kết quả gps</i></li>
                 <li>Xem thông tin website nếu có</li>
                 <li>Đánh dấu yêu thích</li>
               </ul>
